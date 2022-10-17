@@ -4,14 +4,21 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+
 <html>
+    
     <head>
         <title>Demo HelloWorld (com JSP)</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
+    
+    
     <body>
-        <h1>Preencha o formulário:</h1>
+        
+        <header><center><h1><span id="myText"></span></h1></center></header>
+        
+        <h3>Preencha o formulário:</h3>
            <form action="sayhello.jsp" method="post">
            <br>Idioma preferido: <input type="radio" name="lang" value="pt" checked> Português
            <input type="radio" name="lang" value="en"> Inglês
@@ -20,6 +27,27 @@ and open the template in the editor.
            Nome: <input type="text" name="nome"/><br><br>
            <input type="submit" value="Cumprimentar"/>
         </form>
+        
+        <footer><center>Made in BR</center></footer>
+        
+        <script>
+            const date = new Date();
+            let hora = date.getHours();
+            switch (hora){
+                case hora > 12 && hora < 18:
+                     document.getElementById("myText").innerHTML = "Boa Tarde";
 
+                     break;
+                case hora < 12 && hora > 06:
+                     document.getElementById("myText").innerHTML = "Bom Dia";
+
+                     break;
+                 default:
+                     document.getElementById("myText").innerHTML = "Boa Noite";
+
+            }
+        
+        
+        </script>
     </body>
 </html>
